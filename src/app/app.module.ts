@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { APP_BASE_HREF, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 // custom imports
@@ -26,8 +26,7 @@ import { Page3Component } from '../pages/page3/page3.component';
     MyApp
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: "/m" },
-    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
